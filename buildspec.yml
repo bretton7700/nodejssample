@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 20.x
+      nodejs: 14.x
     commands:
       - echo Installing Node.js dependencies...
       - npm install
@@ -11,15 +11,9 @@ phases:
     commands:
       - echo Installing AWS CLI...
 
-  build:
-    commands:
-      - echo Build started on `date`
-      - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
-
 artifacts:
   files:
     - '**/*'
-  base-directory: build
